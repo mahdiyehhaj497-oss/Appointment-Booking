@@ -1,7 +1,10 @@
-export default function TimeSlot() {
+export default function TimeSlot({time , onSelect,selected}) {
     return (
         <>
-        <div>TimeSlot</div>
+            <button
+                onClick={() => onSelect(time)}
+                className={`px-3 py-1 rounded border text-sm ${selected ? "bg-blue-600 text-white" :"bg-white"}`}
+            >{time}</button>
         </>
     )
 }
