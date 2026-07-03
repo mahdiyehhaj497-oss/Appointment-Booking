@@ -1,4 +1,5 @@
-import DoctorCard from "./components/DoctorCard";
+import DoctorCard from "./component/DoctoreCard";
+
 
 export default function App() {
   return (
