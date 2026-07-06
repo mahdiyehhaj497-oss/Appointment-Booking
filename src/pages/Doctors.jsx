@@ -23,10 +23,24 @@ export default function Doctors() {
             }];
         setDoctors(data)
         
-    },[])
+    }, [])
+    
+    const handleSelectDoctor = (doctor) => {
+        navigate(`/doctor/${doctor.id}`,{state:doctor})
+    }
     return (
         <>
-        
+            <div className="p-6">
+                <h1 className="text-2xl font-bold mb-4 "> لیست دکترها</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 "></div>
+                {doctors.map((doctor) => (
+                    <DoctorCard
+                        key={doctor.id}
+                        doctor={doctor}
+                        onSelect={handleSelectDoctor}
+                    />
+))}
+            </div>
         </>
     )
 }
